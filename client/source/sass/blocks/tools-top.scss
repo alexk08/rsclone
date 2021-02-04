@@ -1,0 +1,197 @@
+.tools-top {
+    grid-area: 1 / 1 / 2 / 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-items: center;
+    position: relative;
+
+    padding-right: 46px;
+    background-color: $color-gray;
+
+    &__menu-area {
+      display: flex;
+      min-width: 100px;
+      min-height: 38px;
+      margin-right: 50px;
+      height: 38px;
+
+      button, label {
+        border: 0;
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+
+        font-family: $font-family--roboto;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+
+        color: $color-dark-blue;
+        background-color: transparent;
+      }
+
+      button:hover,
+      label:hover {
+        cursor: pointer;
+        background-color: $color-light-xl-gray;
+      }
+    }
+
+    &__functional-area {
+      height: 38px;
+      display: flex;
+      align-items: center;
+      width: calc(100vw - 92px);
+      background-color: $color-gray;
+      right: 46px;
+      top: 38px;
+      position: absolute;
+      z-index: 4;
+    }
+
+    &__functional-area__rect,
+    &__functional-area__circle,
+    &__functional-area__line,
+    &__functional-area__text,
+    &__functional-area__ellipse,
+    &__functional-area__pencil,
+    &__functional-area__align {
+      height: 88%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: $color-light-xl-gray;
+      background-color: $color-white;
+      border-radius: 5px;
+      padding-left: 7px;
+
+        .tools-top__functional-area__container {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          flex-grow: 0;
+          flex-shrink: 1;
+
+          span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color-light-gray;
+
+            font-family: $font-family--roboto;
+            font-size: 18px;
+            line-height: 20px;
+
+            color: $color-dark-blue;
+            height: 26px;
+            padding: 0 7px;
+
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+          }
+
+          img {
+            width: 24px;
+            height: 22px;
+          }
+
+          &__btn--click,
+          &__btn--keyup {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            margin-right: 7px;
+            padding: 2px;
+            border: 0;
+            border-radius: 5px;
+            font-size: 18px;
+            line-height: 18px;
+
+            background-color: $color-gray;
+            color: $color-blue;
+          }
+
+          &__btn--keyup {
+            max-width: 50px;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            height: 26px;
+          }
+
+          &__btn--click {
+            cursor: pointer;
+          }
+
+          &--family,
+          &--select-anchor {
+            max-height: 30px;
+            margin: 5px;
+            border-radius: 5px;
+          }
+
+        }
+    }
+
+    &__switcher-area {
+      margin-left: auto;
+
+      &__switcher-lang {
+        display: none;
+      }
+
+      [for="switcher-lang"] {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 80px;
+        height: 28px;
+        padding: 14px;
+        padding-left: 11px;
+        border-radius: 5px;
+        color: $color-light-xxl-gray;
+        line-height: 11px;
+        background: $color-dark-blue;
+
+        cursor: pointer;
+        font-family: $font-family--roboto;
+        font-weight: 400;
+        transition: 1s ease;
+      }
+
+      [for="switcher-lang"]::before {
+        content: "EN";
+        position: absolute;
+        right: 11px;
+        color: $color-light-xxl-gray;
+        font-family: $font-family--roboto;
+      }
+
+      [for="switcher-lang"]::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        width: 40px;
+        height: 28px;
+        border-radius: 5px;
+        background-color: $color-light-gray;
+        transition: .5s;
+      }
+
+      &__switcher-lang:checked ~ [for="switcher-lang"]::after {
+        left: 40px;
+      }
+
+      &__switcher-lang:checked ~ [for="switcher-lang"] {
+        background-color: $color-orange;
+      }
+    }
+}
+
+.visibility {
+  display: none;
+}
